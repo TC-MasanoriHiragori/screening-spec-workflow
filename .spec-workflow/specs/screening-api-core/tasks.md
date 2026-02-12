@@ -543,7 +543,7 @@
     4. ログ記録後: tasks.md を編集し、このタスクのステータスを [-] から [x] に変更する
     ```
 
-- [ ] 13. ヘルスチェックルーターの実装
+- [x] 13. ヘルスチェックルーターの実装
   - File: `app/presentation/api/routes/health.py`
   - Purpose: GET /health エンドポイントを実装する
   - _Leverage: FastAPI APIRouter, app/presentation/api/schemas/screening.py_
