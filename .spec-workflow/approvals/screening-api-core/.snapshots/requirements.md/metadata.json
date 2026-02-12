@@ -1,0 +1,14 @@
+{
+  "filePath": ".spec-workflow/specs/screening-api-core/requirements.md",
+  "currentVersion": 1,
+  "snapshots": [
+    {
+      "version": 1,
+      "filename": "snapshot-001.json",
+      "timestamp": "2026-02-12T08:44:59.271Z",
+      "trigger": "initial",
+      "approvalId": "approval_1770885899267_5slc0zwnq",
+      "approvalTitle": "Requirements - screening-api-core 仕様"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+# Ruff configuration for screening-api-core
+# Black-compatible settings
+
+# Linting configuration
+[lint]
+select = [
+    "E",   # pycodestyle errors
+    "W",   # pycodestyle warnings
+    "F",   # pyflakes
+    "I",   # isort
+    "N",   # pep8-naming
+    "UP",  # pyupgrade
+    "B",   # flake8-bugbear
+    "C4",  # flake8-comprehensions
+    "C90", # mccabe complexity
+]
+ignore = []
+
+# McCabe complexity threshold
+mccabe.max-complexity = 10
+
+# Formatting configuration
+[format]
+# Black-compatible line length
+line-length = 88
+indent-style = "space"
+quote-style = "double"
+
+# General settings
+target-version = "py312"
+
+# Exclude patterns
+exclude = [
+    ".git",
+    ".venv",
+    "venv",
+    "__pycache__",
+    ".pytest_cache",
+    ".ruff_cache",
+    "*.egg-info",
+    "build",
+    "dist",
+]

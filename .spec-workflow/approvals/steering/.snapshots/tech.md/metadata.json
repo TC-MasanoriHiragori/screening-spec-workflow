@@ -1,0 +1,14 @@
+{
+  "filePath": ".spec-workflow/steering/tech.md",
+  "currentVersion": 1,
+  "snapshots": [
+    {
+      "version": 1,
+      "filename": "snapshot-001.json",
+      "timestamp": "2026-02-12T08:33:10.158Z",
+      "trigger": "initial",
+      "approvalId": "approval_1770885190153_v6j8zvjb5",
+      "approvalTitle": "Tech Steering Document - 技術スタック定義"
+    }
+  ]
+}
