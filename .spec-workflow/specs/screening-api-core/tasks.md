@@ -263,7 +263,7 @@
 
 ## Phase 4: Application層の実装
 
-- [ ] 7. ScreeningUsecase 実装
+- [x] 7. ScreeningUsecase 実装
   - File: `app/usecase/screening_usecase.py`
   - Purpose: スクリーニングユースケースのオーケストレーションを実装する
   - _Leverage: app/domain/screening_service.py_
