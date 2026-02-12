@@ -1,6 +1,23 @@
 # Ruff configuration for screening-api-core
 # Black-compatible settings
 
+# General settings
+line-length = 88
+target-version = "py312"
+
+# Exclude patterns
+exclude = [
+    ".git",
+    ".venv",
+    "venv",
+    "__pycache__",
+    ".pytest_cache",
+    ".ruff_cache",
+    "*.egg-info",
+    "build",
+    "dist",
+]
+
 # Linting configuration
 [lint]
 select = [
@@ -17,27 +34,10 @@ select = [
 ignore = []
 
 # McCabe complexity threshold
-mccabe.max-complexity = 10
+[lint.mccabe]
+max-complexity = 10
 
 # Formatting configuration
 [format]
-# Black-compatible line length
-line-length = 88
 indent-style = "space"
 quote-style = "double"
-
-# General settings
-target-version = "py312"
-
-# Exclude patterns
-exclude = [
-    ".git",
-    ".venv",
-    "venv",
-    "__pycache__",
-    ".pytest_cache",
-    ".ruff_cache",
-    "*.egg-info",
-    "build",
-    "dist",
-]
