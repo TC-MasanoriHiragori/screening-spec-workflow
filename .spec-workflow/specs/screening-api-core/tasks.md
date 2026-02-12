@@ -589,7 +589,7 @@
     4. ログ記録後: tasks.md を編集し、このタスクのステータスを [-] から [x] に変更する
     ```
 
-- [ ] 14. FastAPIアプリケーションのエントリーポイント実装
+- [x] 14. FastAPIアプリケーションのエントリーポイント実装
   - File: `app/presentation/main.py`
   - Purpose: FastAPI アプリケーションを作成し、ルーターを登録する
   - _Leverage: FastAPI, app/presentation/api/routes/screenings.py, app/presentation/api/routes/health.py_
