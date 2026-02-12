@@ -355,7 +355,7 @@
 
 ## Phase 5: Presentation層の実装
 
-- [ ] 9. Pydantic スキーマの定義
+- [x] 9. Pydantic スキーマの定義
   - File: `app/presentation/api/schemas/screening.py`
   - Purpose: リクエスト/レスポンスのPydanticスキーマを定義する
   - _Leverage: pydantic.BaseModel_
