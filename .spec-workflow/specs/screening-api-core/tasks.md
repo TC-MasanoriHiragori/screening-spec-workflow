@@ -218,7 +218,7 @@
     4. ログ記録後: tasks.md を編集し、このタスクのステータスを [-] から [x] に変更する
     ```
 
-- [ ] 6. Infrastructure層のユニットテスト
+- [x] 6. Infrastructure層のユニットテスト
   - File: `tests/unit/infrastructure/test_screening_service_impl.py`
   - Purpose: EchoScreeningService の実装ロジックをテストする
   - _Leverage: pytest, app/infrastructure/screening_service_impl.py_
