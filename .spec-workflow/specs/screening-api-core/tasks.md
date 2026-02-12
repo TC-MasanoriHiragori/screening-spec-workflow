@@ -403,7 +403,7 @@
     4. ログ記録後: tasks.md を編集し、このタスクのステータスを [-] から [x] に変更する
     ```
 
-- [ ] 10. Presentation層スキーマのユニットテスト
+- [x] 10. Presentation層スキーマのユニットテスト
   - File: `tests/unit/presentation/test_schemas.py`
   - Purpose: Pydantic スキーマのバリデーションをテストする
   - _Leverage: pytest, app/presentation/api/schemas/screening.py_
