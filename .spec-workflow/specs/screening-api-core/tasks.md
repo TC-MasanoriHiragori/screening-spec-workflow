@@ -129,7 +129,7 @@
     4. ログ記録後: tasks.md を編集し、このタスクのステータスを [-] から [x] に変更する
     ```
 
-- [ ] 4. Domain層のユニットテスト
+- [x] 4. Domain層のユニットテスト
   - File: `tests/unit/domain/test_screening_service.py`
   - Purpose: ScreeningService Protocol の型チェックと準拠性をテストする
   - _Leverage: pytest, typing.Protocol_
