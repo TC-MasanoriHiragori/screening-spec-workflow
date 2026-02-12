@@ -174,7 +174,7 @@
 
 ## Phase 3: Infrastructure層の実装
 
-- [ ] 5. EchoScreeningService 実装
+- [x] 5. EchoScreeningService 実装
   - File: `app/infrastructure/screening_service_impl.py`
   - Purpose: 入力値をそのまま返す暫定的なスクリーニング実装を作成する
   - _Leverage: app/domain/screening_service.py_
