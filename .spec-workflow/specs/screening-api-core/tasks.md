@@ -449,7 +449,7 @@
     4. ログ記録後: tasks.md を編集し、このタスクのステータスを [-] から [x] に変更する
     ```
 
-- [ ] 11. 依存性注入の設定
+- [x] 11. 依存性注入の設定
   - File: `app/presentation/api/dependencies.py`
   - Purpose: FastAPI の Depends で Infrastructure層の実装を注入する設定を作成する
   - _Leverage: FastAPI Depends, app/domain/screening_service.py, app/infrastructure/screening_service_impl.py, app/usecase/screening_usecase.py_

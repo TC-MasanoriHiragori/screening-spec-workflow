@@ -31,7 +31,9 @@ select = [
     "C4",  # flake8-comprehensions
     "C90", # mccabe complexity
 ]
-ignore = []
+ignore = [
+    "B008",  # FastAPI Depends pattern in default arguments
+]
 
 # McCabe complexity threshold
 [lint.mccabe]
