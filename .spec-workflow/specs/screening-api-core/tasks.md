@@ -494,7 +494,7 @@
     4. ログ記録後: tasks.md を編集し、このタスクのステータスを [-] から [x] に変更する
     ```
 
-- [ ] 12. スクリーニングルーターの実装
+- [x] 12. スクリーニングルーターの実装
   - File: `app/presentation/api/routes/screenings.py`
   - Purpose: POST /v1/screenings エンドポイントを実装する
   - _Leverage: FastAPI APIRouter, app/presentation/api/schemas/screening.py, app/presentation/api/dependencies.py_
