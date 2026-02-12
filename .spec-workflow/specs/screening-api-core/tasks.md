@@ -308,7 +308,7 @@
     4. ログ記録後: tasks.md を編集し、このタスクのステータスを [-] から [x] に変更する
     ```
 
-- [ ] 8. Application層のユニットテスト
+- [x] 8. Application層のユニットテスト
   - File: `tests/unit/usecase/test_screening_usecase.py`
   - Purpose: ScreeningUsecase のオーケストレーションロジックをモックでテストする
   - _Leverage: pytest, unittest.mock, app/usecase/screening_usecase.py_
