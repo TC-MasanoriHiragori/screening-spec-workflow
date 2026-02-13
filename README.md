@@ -56,17 +56,24 @@ uv sync --extra dev
 ### 開発サーバーの起動
 
 ```bash
-# 方法1: uv run を使用（推奨）
-uv run uvicorn app.presentation.main:app --reload
-
-# 方法2: venvから直接実行（TLS証明書問題がある場合）
-.venv/bin/uvicorn app.presentation.main:app --reload
+# 開発モード（ホットリロード対応）- 推奨
+uv run --no-sync uvicorn app.presentation.main:app --reload
 
 # 本番モード
-.venv/bin/uvicorn app.presentation.main:app --host 0.0.0.0 --port 8000
+uv run --no-sync uvicorn app.presentation.main:app --host 0.0.0.0 --port 8000
 ```
 
-> **注意**: `uv run` でTLS証明書エラーが発生する場合は、方法2を使用してください。
+#### その他の起動方法
+
+```bash
+# venvから直接実行（最もシンプル）
+.venv/bin/uvicorn app.presentation.main:app --reload
+
+# 依存関係を同期してから実行（ネットワーク接続が必要）
+uv run uvicorn app.presentation.main:app --reload
+```
+
+> **`--no-sync` フラグについて**: 依存関係の同期をスキップし、既にインストール済みのパッケージを使用します。TLS証明書エラーを回避でき、起動も高速です。
 
 サーバー起動後、以下のURLにアクセス可能：
 
