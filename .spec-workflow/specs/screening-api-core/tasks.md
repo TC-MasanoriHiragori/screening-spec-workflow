@@ -726,7 +726,7 @@
 
 ## Phase 7: End-to-End テストとOpenAPI出力
 
-- [-] 17. End-to-Endテストの実装
+- [x] 17. End-to-Endテストの実装
   - File: `tests/e2e/test_api_e2e.py`
   - Purpose: APIの主要なユーザーシナリオをE2Eでテストする
   - _Leverage: FastAPI TestClient または httpx, app/presentation/main.py_
@@ -821,7 +821,7 @@
 
 ## Phase 8: 最終統合と文書化
 
-- [-] 19. プロジェクト文書の作成
+- [x] 19. プロジェクト文書の作成
   - File: `README.md`, `app/README.md`, `tests/README.md`
   - Purpose: プロジェクトの概要、セットアップ手順、使用方法を文書化する
   - _Leverage: design.md, requirements.md_
@@ -866,7 +866,7 @@
     4. ログ記録後: tasks.md を編集し、このタスクのステータスを [-] から [x] に変更する
     ```
 
-- [ ] 20. 最終統合確認とクリーンアップ
+- [x] 20. 最終統合確認とクリーンアップ
   - Files: 全プロジェクトファイル
   - Purpose: 全機能が統合され、要件を満たしていることを確認し、コードをクリーンアップする
   - _Leverage: ruff, pytest, design.md_
