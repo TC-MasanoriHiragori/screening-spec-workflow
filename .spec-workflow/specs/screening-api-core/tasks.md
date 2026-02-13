@@ -681,7 +681,7 @@
     4. ログ記録後: tasks.md を編集し、このタスクのステータスを [-] から [x] に変更する
     ```
 
-- [ ] 16. ヘルスチェックエンドポイントの統合テスト
+- [x] 16. ヘルスチェックエンドポイントの統合テスト
   - File: `tests/integration/test_health_integration.py`
   - Purpose: /health エンドポイントの統合テストを実装する
   - _Leverage: FastAPI TestClient, app/presentation/main.py_
@@ -726,7 +726,7 @@
 
 ## Phase 7: End-to-End テストとOpenAPI出力
 
-- [ ] 17. End-to-Endテストの実装
+- [-] 17. End-to-Endテストの実装
   - File: `tests/e2e/test_api_e2e.py`
   - Purpose: APIの主要なユーザーシナリオをE2Eでテストする
   - _Leverage: FastAPI TestClient または httpx, app/presentation/main.py_
