@@ -726,7 +726,7 @@
 
 ## Phase 7: End-to-End テストとOpenAPI出力
 
-- [ ] 17. End-to-Endテストの実装
+- [x] 17. End-to-Endテストの実装
   - File: `tests/e2e/test_api_e2e.py`
   - Purpose: APIの主要なユーザーシナリオをE2Eでテストする
   - _Leverage: FastAPI TestClient または httpx, app/presentation/main.py_
@@ -770,7 +770,7 @@
     4. ログ記録後: tasks.md を編集し、このタスクのステータスを [-] から [x] に変更する
     ```
 
-- [ ] 18. OpenAPI仕様書の出力
+- [-] 18. OpenAPI仕様書の出力
   - File: `openapi.yaml`, `scripts/export_openapi.py`
   - Purpose: OpenAPI 3.0仕様書をYAML形式でエクスポートする
   - _Leverage: FastAPI openapi() method, PyYAML_

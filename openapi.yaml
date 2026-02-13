@@ -1,0 +1,145 @@
+openapi: 3.1.0
+info:
+  title: Screening API
+  description: "\n採用スクリーニングAPIは、採用情報のコンテンツをスクリーニングするための\nRESTful APIバックエンドサービスです。\n\
+    \n## 主な機能\n\n* **スクリーニング処理**: POST /v1/screenings で採用コンテンツをスクリーニング\n* **ヘルスチェック**:\
+    \ GET /health でサービスの稼働状況を確認\n\n## アーキテクチャ\n\nこのAPIはオニオンアーキテクチャとドメイン駆動設計（DDD）に基づいて構築されており、\n\
+    以下の4層で構成されています:\n\n- **Domain層**: ビジネスロジックのインターフェース定義\n- **Application層**: ユースケースのオーケストレーション\n\
+    - **Infrastructure層**: 具体的な実装（暫定的なエコー実装）\n- **Presentation層**: REST APIエンドポイント\n\
+    \    "
+  contact:
+    name: Screening API Team
+  license:
+    name: Internal Use
+  version: 1.0.0
+paths:
+  /v1/screenings:
+    post:
+      tags:
+      - screenings
+      summary: スクリーニング実行
+      description: 提供されたコンテンツに対してスクリーニング処理を実行します。
+      operationId: create_screening_v1_screenings_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ScreeningRequest'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ScreeningResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /health:
+    get:
+      tags:
+      - health
+      summary: ヘルスチェック
+      description: APIサービスのヘルスステータスを確認します。
+      operationId: get_health_health_get
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HealthResponse'
+components:
+  schemas:
+    HTTPValidationError:
+      properties:
+        detail:
+          items:
+            $ref: '#/components/schemas/ValidationError'
+          type: array
+          title: Detail
+      type: object
+      title: HTTPValidationError
+    HealthResponse:
+      properties:
+        status:
+          type: string
+          title: Status
+          description: サービスのヘルスステータス（通常は "ok"）
+          default: ok
+          examples:
+          - ok
+      type: object
+      title: HealthResponse
+      description: "ヘルスチェックレスポンススキーマ\n\nGET /health エンドポイントからのレスポンスボディを表します。\n\nAttributes:\n\
+        \    status: サービスのヘルスステータス（デフォルト: \"ok\"）\n\nExamples:\n    >>> response =\
+        \ HealthResponse()\n    >>> response.status\n    'ok'\n    >>> response =\
+        \ HealthResponse(status=\"healthy\")\n    >>> response.status\n    'healthy'"
+      examples:
+      - status: ok
+    ScreeningRequest:
+      properties:
+        content:
+          type: string
+          minLength: 0
+          title: Content
+          description: スクリーニング対象のテキストコンテンツ
+          examples:
+          - この求人は素晴らしい機会です。
+      type: object
+      required:
+      - content
+      title: ScreeningRequest
+      description: "スクリーニングリクエストスキーマ\n\nPOST /v1/screenings エンドポイントへのリクエストボディを表します。\n\
+        \nAttributes:\n    content: スクリーニング対象のテキストコンテンツ\n\nExamples:\n    >>> request\
+        \ = ScreeningRequest(content=\"採用情報テキスト\")\n    >>> request.content\n    '採用情報テキスト'"
+      examples:
+      - content: この求人は素晴らしい機会です。
+    ScreeningResponse:
+      properties:
+        content:
+          type: string
+          title: Content
+          description: スクリーニング結果のテキストコンテンツ
+          examples:
+          - この求人は素晴らしい機会です。
+      type: object
+      required:
+      - content
+      title: ScreeningResponse
+      description: "スクリーニングレスポンススキーマ\n\nPOST /v1/screenings エンドポイントからのレスポンスボディを表します。\n\
+        \nAttributes:\n    content: スクリーニング結果のテキストコンテンツ\n\nExamples:\n    >>> response\
+        \ = ScreeningResponse(content=\"スクリーニング結果\")\n    >>> response.content\n \
+        \   'スクリーニング結果'\n\nNote:\n    現在の暫定実装では、入力コンテンツがそのまま返されます。"
+      examples:
+      - content: この求人は素晴らしい機会です。
+    ValidationError:
+      properties:
+        loc:
+          items:
+            anyOf:
+            - type: string
+            - type: integer
+          type: array
+          title: Location
+        msg:
+          type: string
+          title: Message
+        type:
+          type: string
+          title: Error Type
+        input:
+          title: Input
+        ctx:
+          type: object
+          title: Context
+      type: object
+      required:
+      - loc
+      - msg
+      - type
+      title: ValidationError
