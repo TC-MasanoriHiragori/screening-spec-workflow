@@ -64,9 +64,10 @@ uv run fastapi run app/presentation/main.py
 ```
 
 サーバー起動後、以下のURLにアクセス可能：
-- API: http://localhost:8000
-- Swagger UI: http://localhost:8000/docs
-- ReDoc: http://localhost:8000/redoc
+
+- API: <http://localhost:8000>
+- Swagger UI: <http://localhost:8000/docs>
+- ReDoc: <http://localhost:8000/redoc>
 
 ### コード品質チェック
 
@@ -160,7 +161,7 @@ curl http://localhost:8000/health
 
 このプロジェクトは、オニオンアーキテクチャを採用しています。各層は内側の層にのみ依存し、外側の層には依存しません。
 
-```
+```text
 ┌─────────────────────────────────────────────────────────┐
 │     Presentation Layer (FastAPI)                        │
 │     - REST APIエンドポイント                              │
@@ -184,28 +185,32 @@ curl http://localhost:8000/health
 ### 層の責務
 
 #### Domain層 (`app/domain/`)
+
 - ビジネスロジックのインターフェース定義
 - Protocol を使用した構造的部分型付け
 - 外部依存なし、Pure Python
 
 #### Application層 (`app/usecase/`)
+
 - ユースケースのオーケストレーション
 - Domain層のインターフェースを使用
 - Infrastructure層の実装には依存しない
 
 #### Infrastructure層 (`app/infrastructure/`)
+
 - Domain層のインターフェースの具体的実装
 - 現在: エコースクリーニングサービス（暫定実装）
 - 将来: 実際のスクリーニングロジック
 
 #### Presentation層 (`app/presentation/`)
+
 - FastAPI REST APIエンドポイント
 - Pydanticスキーマによるバリデーション
 - 依存性注入による疎結合
 
 ### ディレクトリ構造
 
-```
+```text
 screening-api-core/
 ├── app/                           # アプリケーションコード
 │   ├── domain/                   # ドメイン層
@@ -240,6 +245,7 @@ screening-api-core/
 ```
 
 詳細は以下を参照：
+
 - [app/README.md](app/README.md) - アプリケーションコードの構造
 - [tests/README.md](tests/README.md) - テストの構造と実行方法
 
@@ -247,9 +253,9 @@ screening-api-core/
 
 開発サーバー起動後、以下のURLでAPIドキュメントにアクセスできます：
 
-- **Swagger UI**: http://localhost:8000/docs - インタラクティブなAPIドキュメント
-- **ReDoc**: http://localhost:8000/redoc - 読みやすいAPIドキュメント
-- **OpenAPI JSON**: http://localhost:8000/openapi.json - OpenAPI仕様（JSON形式）
+- **Swagger UI**: <http://localhost:8000/docs> - インタラクティブなAPIドキュメント
+- **ReDoc**: <http://localhost:8000/redoc> - 読みやすいAPIドキュメント
+- **OpenAPI JSON**: <http://localhost:8000/openapi.json> - OpenAPI仕様（JSON形式）
 - **OpenAPI YAML**: `openapi.yaml` - OpenAPI仕様（YAML形式、エクスポート済み）
 
 ## テスト
@@ -275,6 +281,7 @@ screening-api-core/
    - E2Eテスト: ユーザーシナリオをテスト
 
 3. **コード品質チェック**
+
    ```bash
    uv run ruff check .
    uv run ruff format .
