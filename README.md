@@ -56,11 +56,11 @@ uv sync --extra dev
 ### 開発サーバーの起動
 
 ```bash
-# FastAPI開発サーバー（ホットリロード対応）
-uv run fastapi dev app/presentation/main.py
+# 開発モード（ホットリロード対応）
+uv run uvicorn app.presentation.main:app --reload
 
 # 本番モード
-uv run fastapi run app/presentation/main.py
+uv run uvicorn app.presentation.main:app --host 0.0.0.0 --port 8000
 ```
 
 サーバー起動後、以下のURLにアクセス可能：
