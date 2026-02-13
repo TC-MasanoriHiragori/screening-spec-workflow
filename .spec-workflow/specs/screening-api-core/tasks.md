@@ -635,7 +635,7 @@
 
 ## Phase 6: 統合テスト
 
-- [ ] 15. スクリーニングエンドポイントの統合テスト
+- [-] 15. スクリーニングエンドポイントの統合テスト
   - File: `tests/integration/test_screening_integration.py`
   - Purpose: /v1/screenings エンドポイントの統合テストを実装する
   - _Leverage: FastAPI TestClient, app/presentation/main.py_
