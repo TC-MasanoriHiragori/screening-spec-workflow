@@ -635,7 +635,7 @@
 
 ## Phase 6: 統合テスト
 
-- [ ] 15. スクリーニングエンドポイントの統合テスト
+- [x] 15. スクリーニングエンドポイントの統合テスト
   - File: `tests/integration/test_screening_integration.py`
   - Purpose: /v1/screenings エンドポイントの統合テストを実装する
   - _Leverage: FastAPI TestClient, app/presentation/main.py_
@@ -681,7 +681,7 @@
     4. ログ記録後: tasks.md を編集し、このタスクのステータスを [-] から [x] に変更する
     ```
 
-- [ ] 16. ヘルスチェックエンドポイントの統合テスト
+- [-] 16. ヘルスチェックエンドポイントの統合テスト
   - File: `tests/integration/test_health_integration.py`
   - Purpose: /health エンドポイントの統合テストを実装する
   - _Leverage: FastAPI TestClient, app/presentation/main.py_
