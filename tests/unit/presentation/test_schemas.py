@@ -49,7 +49,7 @@ class TestScreeningRequest:
         assert request.content == content
 
     def test_request_missing_content_field(self):
-        """content フィールドが欠落している場合にバリデーションエラーが発生することをテスト"""
+        """content フィールド欠落時にバリデーションエラーが発生することをテスト"""
         with pytest.raises(ValidationError) as exc_info:
             ScreeningRequest()  # type: ignore
 
@@ -121,7 +121,7 @@ class TestScreeningResponse:
         assert response.content == content
 
     def test_response_missing_content_field(self):
-        """content フィールドが欠落している場合にバリデーションエラーが発生することをテスト"""
+        """content フィールド欠落時にバリデーションエラーが発生することをテスト"""
         with pytest.raises(ValidationError) as exc_info:
             ScreeningResponse()  # type: ignore
 
@@ -221,7 +221,7 @@ class TestHealthResponse:
         assert response.status == "healthy"
 
     def test_response_json_deserialization_missing_status(self):
-        """status が欠落しているJSONからデフォルト値でデシリアライズできることをテスト"""
+        """status 欠落時にデフォルト値でデシリアライズできることをテスト"""
         json_data = "{}"
         response = HealthResponse.model_validate_json(json_data)
         assert response.status == "ok"

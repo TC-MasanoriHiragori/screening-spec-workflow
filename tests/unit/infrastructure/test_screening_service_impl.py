@@ -90,7 +90,7 @@ def test_screen_echoes_input_exactly(service, input_content, expected_output):
     result = service.screen(input_content)
     assert result == expected_output
     assert result is not None
-    assert type(result) == type(expected_output)
+    assert isinstance(result, str)
 
 
 def test_screen_preserves_string_identity(service):
@@ -102,7 +102,7 @@ def test_screen_preserves_string_identity(service):
     # 内容が同じであることを確認
     assert result == input_text
     # 型が同じであることを確認
-    assert type(result) == str
+    assert isinstance(result, str)
 
 
 def test_screen_does_not_modify_input(service):
