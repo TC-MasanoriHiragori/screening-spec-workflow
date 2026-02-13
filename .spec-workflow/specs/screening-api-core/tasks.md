@@ -770,7 +770,7 @@
     4. ログ記録後: tasks.md を編集し、このタスクのステータスを [-] から [x] に変更する
     ```
 
-- [ ] 18. OpenAPI仕様書の出力
+- [x] 18. OpenAPI仕様書の出力
   - File: `openapi.yaml`, `scripts/export_openapi.py`
   - Purpose: OpenAPI 3.0仕様書をYAML形式でエクスポートする
   - _Leverage: FastAPI openapi() method, PyYAML_
@@ -821,7 +821,7 @@
 
 ## Phase 8: 最終統合と文書化
 
-- [ ] 19. プロジェクト文書の作成
+- [-] 19. プロジェクト文書の作成
   - File: `README.md`, `app/README.md`, `tests/README.md`
   - Purpose: プロジェクトの概要、セットアップ手順、使用方法を文書化する
   - _Leverage: design.md, requirements.md_
