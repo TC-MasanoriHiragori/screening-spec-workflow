@@ -24,17 +24,17 @@ router = APIRouter(
     "",
     response_model=ScreeningResponse,
     summary="スクリーニング実行",
-    description="提供されたコンテンツに対してスクリーニング処理を実行します。",
+    description="提供されたコンテンツに対してスクリーニング処理を非同期で実行します。",
 )
-def create_screening(
+async def create_screening(
     request: ScreeningRequest,
     usecase: ScreeningUsecase = Depends(get_screening_usecase),
 ) -> ScreeningResponse:
     """
-    スクリーニング処理を実行するエンドポイント
+    スクリーニング処理を非同期で実行するエンドポイント
 
     このエンドポイントは、リクエストボディで提供されたコンテンツに対して
-    スクリーニング処理を実行し、結果を返します。
+    スクリーニング処理を非同期で実行し、結果を返します。
 
     Args:
         request: スクリーニングリクエスト（content フィールドを含む）
@@ -63,11 +63,12 @@ def create_screening(
         ```
 
     Note:
+        非同期実行により、外部APIやデータベースアクセスを含む
+        スクリーニングロジックでも効率的に処理できます。
         現在の実装では、入力コンテンツをそのまま返す暫定的な動作です。
-        将来的には実際のスクリーニングロジックが実装される予定です。
     """
-    # ユースケースを実行してスクリーニング処理を行う
-    result_content = usecase.execute(request.content)
+    # ユースケースを非同期で実行してスクリーニング処理を行う
+    result_content = await usecase.execute(request.content)
 
     # レスポンスを作成して返す
     return ScreeningResponse(content=result_content)

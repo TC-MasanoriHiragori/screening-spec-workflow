@@ -45,9 +45,9 @@ class ScreeningUsecase:
         """
         self._service = service
 
-    def execute(self, content: str) -> str:
+    async def execute(self, content: str) -> str:
         """
-        スクリーニング処理を実行します
+        スクリーニング処理を非同期で実行します
 
         Args:
             content: スクリーニング対象のテキスト
@@ -56,17 +56,18 @@ class ScreeningUsecase:
             スクリーニング結果のテキスト
 
         Examples:
-            >>> usecase.execute("入力テキスト")
+            >>> result = await usecase.execute("入力テキスト")
+            >>> result
             'スクリーニング結果'
 
         Note:
             このメソッドは、ScreeningServiceのscreen()メソッドを
-            呼び出してスクリーニング処理を実行します。
+            非同期で呼び出してスクリーニング処理を実行します。
             現在の実装では追加のビジネスロジックはありませんが、
             将来的にロギング、バリデーション、前処理・後処理などを
             追加する拡張ポイントとなります。
         """
-        return self._service.screen(content)
+        return await self._service.screen(content)
 
 
 __all__ = ["ScreeningUsecase"]
