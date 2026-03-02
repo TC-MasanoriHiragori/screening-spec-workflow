@@ -17,9 +17,9 @@ class EchoScreeningService:
     実際のスクリーニングロジックに置き換えられる予定です。
     """
 
-    def screen(self, content: str) -> str:
+    async def screen(self, content: str) -> str:
         """
-        スクリーニング処理を実行します
+        スクリーニング処理を非同期で実行します
 
         現在の実装では、入力コンテンツを変更せずにそのまま返します。
 
@@ -31,11 +31,14 @@ class EchoScreeningService:
 
         Examples:
             >>> service = EchoScreeningService()
-            >>> service.screen("テスト文字列")
+            >>> result = await service.screen("テスト文字列")
+            >>> result
             'テスト文字列'
 
         Note:
-            この実装は副作用を持たない純粋関数です。
+            この実装は非同期で実行され、副作用を持たない純粋関数です。
+            将来的には外部APIやデータベースへの非同期アクセスを含む
+            実際のスクリーニングロジックに置き換えられる予定です。
         """
         return content
 

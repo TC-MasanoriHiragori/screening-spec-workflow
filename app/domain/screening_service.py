@@ -19,9 +19,9 @@ class ScreeningService(Protocol):
     必要なメソッドシグネチャを持っていれば自動的に準拠します。
     """
 
-    def screen(self, content: str) -> str:
+    async def screen(self, content: str) -> str:
         """
-        スクリーニング処理を実行します
+        スクリーニング処理を非同期で実行します
 
         Args:
             content: スクリーニング対象のテキスト
@@ -30,7 +30,8 @@ class ScreeningService(Protocol):
             スクリーニング結果のテキスト
 
         Note:
-            このメソッドは副作用を持たず、純粋関数として実装されるべきです。
+            このメソッドは非同期で実行され、副作用を持たず、
+            純粋関数として実装されるべきです。
         """
         ...
 
