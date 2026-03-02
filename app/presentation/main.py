@@ -6,6 +6,7 @@ Screening API - FastAPIアプリケーションエントリーポイント
 """
 
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 
 from app.presentation.api.routes import health_router, screenings_router
 
@@ -38,6 +39,22 @@ RESTful APIバックエンドサービスです。
     license_info={
         "name": "Internal Use",
     },
+)
+
+# CORS設定
+# フロントエンドからのアクセスを許可するためのCORS設定
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "http://localhost:3000",  # 開発環境のフロントエンド
+        "http://localhost:5173",  # Vite開発サーバー
+        "http://127.0.0.1:3000",
+        "http://127.0.0.1:5173",
+        # 本番環境では適切なオリジンを設定してください
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],  # すべてのHTTPメソッドを許可
+    allow_headers=["*"],  # すべてのHTTPヘッダーを許可
 )
 
 # スクリーニングルーターを登録
