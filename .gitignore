@@ -62,6 +62,3 @@ Thumbs.db
 
 # Logs
 *.log
-
-# OpenAPI generated files (keep in repo for now)
-# openapi.yaml
